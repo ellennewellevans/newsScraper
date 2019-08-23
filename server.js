@@ -1,41 +1,30 @@
 var express = require("express");
 var logger = require("morgan");
 var mongoose = require("mongoose");
-
-// Our scraping tools
-// Axios is a promised-based http library, similar to jQuery's Ajax method
-// It works on the client and on the server
 var axios = require("axios");
 var cheerio = require("cheerio");
-
-// Require all models
+var methodOverride = require('method-override');
 var db = require("./models");
-
 var PORT = 3000;
-
-// Initialize Express
 var app = express();
+var exphbs = require("express-handlebars");
 
-// Configure middleware
-
-// Use morgan logger for logging requests
+app.engine("handlebars", exphbs({
+  defaultLayout: "main"
+}));
+app.set("view engine", "handlebars");
 app.use(logger("dev"));
-// Parse request body as JSON
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-// Make public a static folder
 app.use(express.static("public"));
+app.use(methodOverride('_method'));
 
-// Connect to the Mongo DB
-mongoose.connect("mongodb://localhost/unit18Populater", { useNewUrlParser: true });
+mongoose.connect("mongodb://localhost/newsscraper", { useNewUrlParser: true });
 
 // Routes
 
-// A GET route for scraping the echoJS website
 app.get("/scrape", function(req, res) {
-  // First, we grab the body of the html with axios
-  axios.get("https://www.msnbc.com").then(function(response) {
-    // Then, we load that into cheerio and save it to $ for a shorthand selector
+  axios.get("https://www.npr.org/sections/national/").then(function(response) {
     var $ = cheerio.load(response.data);
 
     // Now, we grab every h2 within an article tag, and do the following:
