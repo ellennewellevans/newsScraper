@@ -44,7 +44,7 @@ module.exports = app => {
         //Set up $ to cheerio
         let $ = cheerio.load(response.data);
 
-        $("article").each(function(i, element) {
+        $(".item-info-wrap").each(function(i, element) {
           let result = {};
           const title = $(this)
             .children(".item-info")
