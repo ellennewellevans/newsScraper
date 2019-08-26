@@ -19,7 +19,7 @@
 
 > Scraper web app that lets users view and leave comments on the latest news. 
 
-### 🏠 [Homepage](https://github.com/ellennewellevans/newsScraper)
+### 🏠 [Deployed App](https://fathomless-stream-79996.herokuapp.com/)
 
 ## Prerequisites
 
