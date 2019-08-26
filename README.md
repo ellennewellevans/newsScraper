@@ -17,7 +17,7 @@
   </a>
 </p>
 
-> Scraper web app that lets users view and leave comments on the latest news
+> Scraper web app that lets users view and leave comments on the latest news. 
 
 ### 🏠 [Homepage](https://github.com/ellennewellevans/newsScraper)
 
@@ -25,6 +25,11 @@
 
 - npm >=5.5.0
 - node >=9.3.0
+- express
+- express-handlebars
+- mongoose
+- cheerio
+- axios
 
 ## Install
 
