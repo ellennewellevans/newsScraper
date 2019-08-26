@@ -1,0 +1,13 @@
+.jumbotron {
+    padding: 2rem 1rem;
+    margin-bottom: 2rem;
+    border-radius: 0.3rem;
+    background: #242134;
+    background: -webkit-linear-gradient(to right, #9E9AB4, #242134);
+    background: linear-gradient(to right, #9E9AB4, #242134);
+    color: white;
+}
+
+.hd1 {
+    color: #fff;
+}
